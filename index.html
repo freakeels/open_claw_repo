@@ -134,7 +134,15 @@
         document.getElementById('last-update').textContent = new Date().toISOString().split('T')[0];
         
         // 範例報告資料（未來將從 API 或 JSON 檔案取得）
-        const exampleReports = [];
+        const exampleReports = [
+            {
+                title: "美股科技股分析報告",
+                description: "分析 AI 半導體、記憶體、晶片設計等類股趨勢與投資建議",
+                tags: ["股票", "科技股", "半導體", "AI", "投資分析"],
+                date: "2026-02-01",
+                url: "reports/20260201-2016-stock-analysis.html"
+            }
+        ];
         
         function renderReports() {
             const container = document.getElementById('report-list');

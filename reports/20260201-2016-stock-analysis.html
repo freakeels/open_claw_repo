@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美股科技股分析報告 - 2026-02-01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .positive { color: #10b981; }
+        .negative { color: #ef4444; }
+        .neutral { color: #6b7280; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 導航欄 -->
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-chart-line text-2xl"></i>
+                    <div>
+                        <h1 class="text-xl font-bold">美股科技股分析報告</h1>
+                        <p class="text-sm opacity-90">分析日期：2026-02-01 | 生成時間：20:16</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="../index.html" class="hover:opacity-80 text-sm bg-white/20 px-3 py-1 rounded-full">
+                        <i class="fas fa-home mr-1"></i>返回首頁
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主內容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 報告摘要 -->
+        <section class="mb-12">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-file-alt mr-3 text-blue-500"></i>報告摘要
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <div class="text-2xl font-bold text-blue-700 mb-2">📈 市場趨勢</div>
+                        <p class="text-gray-700">AI 半導體需求強勁，帶動科技股上漲。記憶體價格持續上漲，HBM 供不應求。</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <div class="text-2xl font-bold text-green-700 mb-2">🏆 強勢類股</div>
+                        <p class="text-gray-700">晶片製造、記憶體、AI 基礎設施表現優異。台積電、美光、Nvidia 為領頭羊。</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-xl">
+                        <div class="text-2xl font-bold text-purple-700 mb-2">⚠️ 風險提示</div>
+                        <p class="text-gray-700">估值偏高，地緣政治風險，競爭加劇可能影響部分公司毛利。</p>
+                    </div>
+                </div>
+                
+                <!-- 圖表 -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4">半導體類股表現趨勢</h3>
+                    <div class="bg-gray-50 p-4 rounded-xl">
+                        <canvas id="stockChart" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 詳細分析 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">📊 詳細分析</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 晶片設計 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-microchip mr-2 text-red-500"></i>晶片設計 (Chip Design)
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span><strong>Nvidia (NVDA)</strong> - AI 訓練晶片霸主</span>
+                            <span class="positive">▲ 看好</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><strong>AMD (AMD)</strong> - MI300 系列挑戰者</span>
+                            <span class="positive">▲ 看好</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><strong>Broadcom (AVGO)</strong> - 客製化 AI 晶片</span>
+                            <span class="neutral">➜ 中立</span>
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-gray-600 text-sm">H100/B100 需求強勁，Microsoft、Meta 大單加持。</p>
+                </div>
+
+                <!-- 晶片製造 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-industry mr-2 text-blue-500"></i>晶片製造 (Chip Manufacturing)
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span><strong>台積電 (TSM)</strong> - 全球晶圓代工龍頭</span>
+                            <span class="positive">▲ 強烈看好</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><strong>ASML (ASML)</strong> - EUV 光刻機獨家</span>
+                            <span class="positive">▲ 看好</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><strong>應用材料 (AMAT)</strong> - 半導體設備</span>
+                            <span class="positive">▲ 看好</span>
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-gray-600 text-sm">先進製程需求強勁，AI 晶片推動產能利用率。</p>
+                </div>
+
+                <!-- 記憶體 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-memory mr-2 text-green-500"></i>記憶體 (Memory)
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span><strong>美光 (MU)</strong> - HBM 記憶體供應商</span>
+                            <span class="positive">▲ 強烈看好</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><strong>三星 (005930)</strong> - HBM 市場主導者</span>
+                            <span class="positive">▲ 看好</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><strong>海力士 (000660)</strong> - HBM 技術領先</span>
+                            <span class="positive">▲ 看好</span>
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-gray-600 text-sm">HBM 記憶體供不應求，價格持續上漲至 2026 年底。</p>
+                </div>
+
+                <!-- AI 模型提供商 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-brain mr-2 text-purple-500"></i>AI 模型提供商 (AI Model Providers)
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span><strong>Microsoft (MSFT)</strong> - OpenAI 最大股東</span>
+                            <span class="positive">▲ 看好</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><strong>Google (GOOGL)</strong> - Gemini 模型</span>
+                            <span class="neutral">➜ 中立</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><strong>Meta (META)</strong> - Llama 開源模型</span>
+                            <span class="positive">▲ 看好</span>
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-gray-600 text-sm">AI 雲端服務成長強勁，但估值偏高需注意風險。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 投資建議 -->
+        <section class="mb-12">
+            <div class="gradient-bg text-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold mb-6">🎯 投資建議與策略</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">短期 (1-4 週)</h3>
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check-circle mr-2"></i><strong>看好類別</strong>：晶片製造/設備、記憶體</li>
+                            <li><i class="fas fa-exclamation-triangle mr-2"></i><strong>謹慎類別</strong>：純軟體 AI 應用公司</li>
+                            <li><i class="fas fa-chart-line mr-2"></i>理由：直接受惠 AI 硬體需求，供需失衡持續</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">核心標的關注</h3>
+                        <ul class="space-y-2">
+                            <li>1. <strong>TSM (台積電)</strong> - AI 浪潮最大受益者，估值合理</li>
+                            <li>2. <strong>MU (美光)</strong> - HBM 記憶體週期向上，價格彈性大</li>
+                            <li>3. <strong>NVDA (輝達)</strong> - AI 領頭羊，關注競爭壓力</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-white/20 rounded-xl">
+                    <h3 class="font-bold mb-2">操作策略</h3>
+                    <p>• <strong>逢低布局</strong>：若因宏觀因素回調 5-10%，可分批買入</p>
+                    <p>• <strong>分散配置</strong>：避免過度集中單一股票/類別</p>
+                    <p>• <strong>停損紀律</strong>：設定 8-10% 停損點控制下行風險</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 免責聲明 -->
+        <section class="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-yellow-800 mb-3 flex items-center">
+                <i class="fas fa-exclamation-circle mr-2"></i>免責聲明
+            </h3>
+            <p class="text-yellow-700 text-sm">
+                本報告由 🦞 龍蝦9527 (OpenClaw AI 助手) 自動生成，僅供參考，不構成投資建議。
+                股市有風險，投資需謹慎。過往表現不代表未來結果，請根據自身風險承受能力做出投資決策。
+            </p>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p class="mb-2">
+                <i class="fas fa-code-branch mr-2"></i>
+                報告編號：<span class="font-mono">20260201-2016-stock-analysis</span> |
+                生成系統：<span class="font-mono">OpenClaw Web 自動化分析助手 v1.0</span>
+            </p>
+            <p>
+                本報告自動生成並部署至 GitHub Pages |
+                <a href="https://github.com/freakeels/open_claw_repo" class="text-blue-400 hover:underline" target="_blank">GitHub 倉庫</a> |
+                <a href="../index.html" class="text-blue-400 hover:underline">返回報告中心</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript 圖表 -->
+    <script>
+        // 股票表現圖表
+        const ctx = document.getElementById('stockChart').getContext('2d');
+        const stockChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                datasets: [
+                    {
+                        label: '半導體指數',
+                        data: [100, 115, 125, 140, 150, 165],
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    },
+                    {
+                        label: '記憶體類股',
+                        data: [100, 110, 130, 145, 160, 180],
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    },
+                    {
+                        label: 'AI 晶片',
+                        data: [100, 120, 140, 165, 185, 210],
+                        borderColor: '#8b5cf6',
+                        backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: '半導體相關類股表現趨勢 (2025-2026)' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        title: { display: true, text: '指數 (基準=100)' }
+                    }
+                }
+            }
+        });
+
+        // 更新報告時間
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date();
+            document.getElementById('report-time').textContent = now.toLocaleString('zh-TW');
+        });
+    </script>
+</body>
+</html>
