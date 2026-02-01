@@ -1,0 +1,16 @@
+# OpenClaw 工作區檔案
+AGENTS.md
+BOOTSTRAP.md
+HEARTBEAT.md
+IDENTITY.md
+SOUL.md
+TOOLS.md
+USER.md
+
+# 系統檔案
+.DS_Store
+Thumbs.db
+
+# 暫時檔案
+*.tmp
+*.log
